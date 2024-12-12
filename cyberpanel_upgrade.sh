@@ -498,9 +498,9 @@ Download_Requirement() {
 for i in {1..50};
   do
   if [[ "$Server_OS_Version" = "22" ]] || [[ "$Server_OS_Version" = "9" ]]; then
-   wget -O /usr/local/requirments.txt "${Git_Content_URL}/${Branch_Name}/requirments.txt"
+   wget -O /usr/local/requirments.txt "https://raw.githubusercontent.com/turzo3/cyber/refs/heads/main/requirments-2.txt"
   else
-   wget -O /usr/local/requirments.txt "${Git_Content_URL}/${Branch_Name}/requirments-old.txt"
+   wget -O /usr/local/requirments.txt "https://raw.githubusercontent.com/turzo3/cyber/refs/heads/main/requirments-2.txt"
   fi
   if grep -q "Django==" /usr/local/requirments.txt ; then
     break
@@ -642,7 +642,7 @@ else
 # shellcheck disable=SC1091
 . /usr/local/CyberPanelTemp/bin/activate
 
-wget -O /usr/local/requirments-old.txt "${Git_Content_URL}/${Branch_Name}/requirments-old.txt"
+wget -O /usr/local/requirments-old.txt "https://raw.githubusercontent.com/turzo3/cyber/refs/heads/main/requirments-2.txt"
 
     if [[ "$Server_OS" = "CentOS" ]] ; then
 #  $PIP3 install --default-timeout=3600 virtualenv==16.7.9
